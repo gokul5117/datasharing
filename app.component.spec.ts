@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'httprequest'`, () => {
+  it(`should have as title 'reactiveform'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('httprequest');
+    expect(app.title).toEqual('reactiveform');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('httprequest app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('reactiveform app is running!');
   });
 });
