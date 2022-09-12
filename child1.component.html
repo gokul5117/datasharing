@@ -1,0 +1,9 @@
+<p><b>parent to child</b> </p>
+<p *ngFor="let item of age">
+{{item.name}}
+</p>
+
+
+<p> <b>Child to parent</b></p>
+<button  (click)="emit()">click</button>
+    

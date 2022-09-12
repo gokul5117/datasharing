@@ -1,0 +1,39 @@
+<app-child1 [age]="temp" (senddata)="receiveddata($event)"></app-child1>
+<p *ngFor="let i of parent">
+  {{i.name }}</p>
+
+  
+ <p>{{childcomp.hello()}}</p> 
+
+
+ <div class="container1"appDirective>
+  <p appDirective>
+    Demo html element to understand Host listener
+  </p>
+ </div>
+ 
+ <div  class="container2" appDirective>
+  <p>
+    Demo html element to understand Host listener
+  </p>
+ </div>
+
+ <div  class="container3" appHostbinding>
+  <p>
+    Demo html element to understand HostBinding
+  </p>
+ </div>
+
+ <div>
+  <button (click)="setsession()"> session set</button>
+  <button (click)="getsession()"> session get</button>
+  
+ </div>
+
+ <div>
+  <button (click)="setlocal()">local set</button>
+  <button (click)="getlocal()"> local get</button>
+
+  <!-- <button (click)="remove()">remove</button> -->
+  
+ </div>
