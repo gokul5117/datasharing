@@ -1,39 +1,71 @@
-<app-child1 [age]="temp" (senddata)="receiveddata($event)"></app-child1>
-<p *ngFor="let i of parent">
-  {{i.name }}</p>
+<div class="container">
+  <h2> Employee form</h2>
 
-  
- <p>{{childcomp.hello()}}</p> 
+  <form   [formGroup]="employeeform"   (ngSubmit)="onsubmit(employeeform.value)">
+    <div class="mb-3 mt-3">
+      <label for="name" class="form-label">Employee name:</label>
+      <input type="text" class="form-control" id="name" placeholder=" Enter name" name="name"  formControlName="name">
+    </div>
+   
+    <div class="mb-3">
+      <label for="id" class="form-label">Employee id:</label>
+      <input type="number" class="form-control" id="id" placeholder="Enter id" name="id"  formControlName="id">
+    </div>
+    
+
+    <div class="mb-3">
+      <label for="dob" class="form-label">Employee DOB:</label>
+      <input type="date" class="form-control" id="dob" placeholder="Enter DOB" name="DOB" formControlName="dob">
+    </div>
+    
+     <div class="mb-3">
+      <label for="email" class="form-label">Employee Email:</label>
+      <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="Email"  formControlName="email">
+    </div>
+    
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Employee address:</label>
+      <input type="address" class="form-control" id="address" placeholder="Enter address" name="address"  formControlName="address" >
+    </div>
+    
+
+   
+    <button type="submit" class="btn btn-primary">{{editmode ? 'update' : 'submit'}}</button>
+   <!-- // <button type="button" class="btn btn-primary" (click)="update(employeeform,i)">update</button> -->
+    
+   
+    
+  </form>
+</div>
 
 
- <div class="container1"appDirective>
-  <p appDirective>
-    Demo html element to understand Host listener
-  </p>
- </div>
- 
- <div  class="container2" appDirective>
-  <p>
-    Demo html element to understand Host listener
-  </p>
- </div>
-
- <div  class="container3" appHostbinding>
-  <p>
-    Demo html element to understand HostBinding
-  </p>
- </div>
-
- <div>
-  <button (click)="setsession()"> session set</button>
-  <button (click)="getsession()"> session get</button>
-  
- </div>
-
- <div>
-  <button (click)="setlocal()">local set</button>
-  <button (click)="getlocal()"> local get</button>
-
-  <!-- <button (click)="remove()">remove</button> -->
-  
- </div>
+<div class="container mt-3">
+  <h2>Employee Table</h2>
+              
+  <table class="table">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>id</th>
+        <th>Email</th>
+        <th>address</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of  emptable">
+        <td>{{i.name}}</td>
+        <td>{{i.id}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.address}}</td>
+        <button type="button" class="btn btn-danger" (click)="delete(i.index)">Delete</button>
+        <button type="button" class="btn btn-success" (click)="edit(i.index)">Edit</button>
+        
+      </tr>
+        
+        
+    </tbody>
+        
+  </table>
+</div>

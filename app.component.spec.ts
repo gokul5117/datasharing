@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'datasharing'`, () => {
+  it(`should have as title 'httprequest'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('datasharing');
+    expect(app.title).toEqual('httprequest');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('datasharing app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('httprequest app is running!');
   });
 });
